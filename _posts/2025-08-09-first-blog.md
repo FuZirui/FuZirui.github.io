@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "????"
+title: "first blog"
 date: 2025-08-09 10:00:00 +0800
 categories: blog
 ---

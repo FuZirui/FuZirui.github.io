@@ -1,0 +1,42 @@
+# 网站基本信息
+title: "Fuzirui's Blog"
+description: "我的个人博客"
+author: "Fuzirui"
+
+# GitHub Pages 默认主题（可以换成其他，比如 minima, cayman, jekyll-theme-chirpy 等）
+theme: minima
+
+# 网站 URL（改成你的实际域名）
+url: "https://fuzirui.github.io"
+baseurl: "" # 如果放在子路径，写成 /子路径
+
+# 编码
+encoding: "utf-8"
+
+# Markdown 渲染器
+markdown: kramdown
+
+# 时区
+timezone: Asia/Shanghai
+
+# 插件（GitHub Pages 默认支持这些）
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 显示的文章数量
+paginate: 10
+paginate_path: "/page:num"
+
+# 文章目录
+collections:
+  posts:
+    output: true
+
+# 默认配置（所有 posts 都会应用）
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
