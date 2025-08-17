@@ -1,0 +1,99 @@
+# Hexo 配置
+## 文档：https://hexo.io/zh-cn/docs/configuration.html
+
+# 网站基本信息
+title: 我的博客                  # 网站标题
+subtitle: '分享技术与生活'       # 网站副标题
+description: '这是一个基于 Hexo 的博客'  # 网站描述（用于 SEO）
+keywords: [技术, 博客, Hexo]     # 网站关键词（用于 SEO）
+author: FuZirui                   # 作者名称
+language: zh-CN                  # 网站语言（zh-CN 表示中文）
+timezone: Asia/Shanghai          # 时区（亚洲/上海）
+
+# URL
+## 如果网站部署在子目录，需要配置此项（例如 GitHub Pages 仓库名）
+url: https://www.fuzirui.cn      # 网站域名
+root: /                          # 网站根目录
+permalink: :year/:month/:day/:title/  # 文章永久链接格式
+permalink_defaults:              # 永久链接默认值
+
+# 目录设置
+source_dir: source               # 源文件目录（存放 Markdown 文章）
+public_dir: public               # 生成的静态文件目录
+tag_dir: tags                    # 标签页目录
+archive_dir: archives            # 归档页目录
+category_dir: categories         # 分类页目录
+code_dir: downloads/code         # 代码下载目录
+i18n_dir: :lang                  # 国际化目录
+skip_render:                     # 跳过渲染的文件/目录
+
+# 写作设置
+new_post_name: :title.md         # 新文章文件名格式
+default_layout: post             # 默认布局
+titlecase: false                 # 标题首字母是否大写
+external_link:                   # 外部链接设置
+  enable: true                   # 是否在新标签页打开外部链接
+  field: site                    # 应用范围（site 表示全站）
+  exclude: ''                    # 例外的域名
+filename_case: 0                 # 文件名大小写转换（0: 不转换, 1: 小写, 2: 大写）
+render_drafts: false             # 是否渲染草稿
+post_asset_folder: false         # 是否为文章创建同名资源文件夹
+relative_link: false             # 是否使用相对路径
+future: true                     # 是否显示未来发布的文章
+highlight:                       # 代码高亮设置
+  enable: true
+  line_number: true              # 是否显示行号
+  auto_detect: false             # 是否自动检测语言
+  tab_replace: ''                # 替换制表符的字符串
+
+# 首页设置
+index_generator:
+  path: ''                       # 首页路径
+  per_page: 10                   # 每页显示文章数
+  order_by: -date                # 排序方式（-date 表示按日期倒序）
+
+# 分类和标签
+default_category: uncategorized # 默认分类
+category_map:                    # 分类别名映射
+  技术: tech
+  生活: life
+tag_map:                         # 标签别名映射
+  hexo: Hexo
+  javascript: JS
+
+# 日期格式
+date_format: YYYY-MM-DD          # 日期格式
+time_format: HH:mm:ss            # 时间格式
+updated_option: 'mtime'          # 更新时间选项（mtime: 文件修改时间）
+
+# 分页设置
+per_page: 10                     # 每页显示文章数（0 表示禁用分页）
+pagination_dir: page             # 分页目录
+
+# 扩展
+## 插件和主题配置
+theme: landscape                 # 默认主题（可替换为其他主题，如 next）
+
+# 部署配置
+## 文档：https://hexo.io/zh-cn/docs/deployment.html
+deploy:
+  type: git                      # 部署类型（git/ftp等）
+  repo: https://github.com/FuZirui/FuZirui.github.io.git  # 仓库地址
+  branch: main               # 部署分支
+
+# 编码设置（解决中文乱码）
+encoding: utf-8
+
+# 其他设置
+## 网站图标（需自行放置图标文件到 source 目录）
+favicon: /favicon.ico
+
+## 社交媒体链接（根据主题支持情况配置）
+social:
+  GitHub: https://github.com/fuzirui
+  Twitter: 
+
+## 搜索功能（需配合主题或插件）
+search:
+  enable: true
+
