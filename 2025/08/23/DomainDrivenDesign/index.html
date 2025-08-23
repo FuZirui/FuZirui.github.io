@@ -6,15 +6,15 @@
   
   <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="title: �����������date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- ����ʼ�tags:- �ܹ����description:author: fuzirui����Entityʵ�壺һ�ֶ���ͨ����ʶ���壻 Factory������һ�ַ�װ���ƣ��Ѹ��Ӵ����߼���װ��">
+  <meta name="description" content="title: 领域驱动设计date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- 读书笔记tags:- 架构设计description:author: fuzirui术语Entity实体：一种对象，通过标识定义； Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型； Function函数：没有副作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
 <meta property="og:url" content="https://www.fuzirui.cn/2025/08/23/DomainDrivenDesign/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="title: �����������date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- ����ʼ�tags:- �ܹ����description:author: fuzirui����Entityʵ�壺һ�ֶ���ͨ����ʶ���壻 Factory������һ�ַ�װ���ƣ��Ѹ��Ӵ����߼���װ��">
+<meta property="og:description" content="title: 领域驱动设计date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- 读书笔记tags:- 架构设计description:author: fuzirui术语Entity实体：一种对象，通过标识定义； Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型； Function函数：没有副作">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-23T02:56:40.609Z">
-<meta property="article:modified_time" content="2025-08-23T03:20:38.428Z">
+<meta property="article:modified_time" content="2025-08-23T05:53:17.926Z">
 <meta property="article:author" content="FuZirui">
 <meta property="article:tag" content="技术">
 <meta property="article:tag" content="博客">
@@ -97,101 +97,101 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="title-�����������date-2025-08-23-12-30-00updated-2025-08-12-12-30-00categories-����ʼ�tags-�ܹ����description-author-fuzirui"><a href="#title-�����������date-2025-08-23-12-30-00updated-2025-08-12-12-30-00categories-����ʼ�tags-�ܹ����description-author-fuzirui" class="headerlink" title="title: �����������date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- ����ʼ�tags:- �ܹ����description:author: fuzirui"></a>title: �����������<br>date: 2025-08-23 12:30:00<br>updated: 2025-08-12 12:30:00<br>categories:<br>- ����ʼ�<br>tags:<br>- �ܹ����<br>description:<br>author: fuzirui</h2><h1 id="����"><a href="#����" class="headerlink" title="����"></a>����</h1><p>Entityʵ�壺һ�ֶ���ͨ����ʶ���壻</p>
-<p>Factory������һ�ַ�װ���ƣ��Ѹ��Ӵ����߼���װ������������Ķ������ͣ�</p>
-<p>Function������û�и����õĲ�����</p>
-<p>Repository�ֿ⣺һ�ְѴ洢��������Ϊ��װ�����Ļ��ƣ������ڶ��󼯺ϣ�</p>
-<p>Service����һ����Ϊ�ӿ��ṩ�Ĳ������޷�װ��״̬��</p>
-<p>Standalone class���������ࣩ��</p>
-<p>Value Objectֵ����</p>
-<h1 id="�ֲ�gʽ��Layered-Architecture��"><a href="#�ֲ�gʽ��Layered-Architecture��" class="headerlink" title="�ֲ�ģʽ��Layered Architecture��"></a>�ֲ�ģʽ��Layered Architecture��</h1><h2 id="ԭ��"><a href="#ԭ��" class="headerlink" title="ԭ��"></a>ԭ��</h2><p>�κ�Ԫ�ؽ�������������Ԫ�ػ��²�Ԫ�ء����ھۣ�</p>
-<p>����ͨ����Ҫͨ����Ӵ��ݻ��ƣ��ص����۲���ģʽ����</p>
-<p>�б߽�������ģ�Bounded Context��</p>
-<h2 id="���÷ֲ�u"><a href="#���÷ֲ�u" class="headerlink" title="���÷ֲ�ṹ"></a>���÷ֲ�ṹ</h2><ol>
-<li>�û������</li>
-<li>Ӧ�ò㣺�򵥡�������ҵ�����</li>
-<li>����㣺����ҵ����ģ��</li>
-<li>������ʩ��</li>
+<h2 id="title-领域驱动设计date-2025-08-23-12-30-00updated-2025-08-12-12-30-00categories-读书笔记tags-架构设计description-author-fuzirui"><a href="#title-领域驱动设计date-2025-08-23-12-30-00updated-2025-08-12-12-30-00categories-读书笔记tags-架构设计description-author-fuzirui" class="headerlink" title="title: 领域驱动设计date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- 读书笔记tags:- 架构设计description:author: fuzirui"></a>title: 领域驱动设计<br>date: 2025-08-23 12:30:00<br>updated: 2025-08-12 12:30:00<br>categories:<br>- 读书笔记<br>tags:<br>- 架构设计<br>description:<br>author: fuzirui</h2><h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><p>Entity实体：一种对象，通过标识定义；</p>
+<p>Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型；</p>
+<p>Function函数：没有副作用的操作；</p>
+<p>Repository仓库：一种把存储、检索行为封装起来的机制，类似于对象集合；</p>
+<p>Service服务：一种作为接口提供的操作，无封装的状态；</p>
+<p>Standalone class（孤立的类）；</p>
+<p>Value Object值对象：</p>
+<h1 id="分层模式（Layered-Architecture）"><a href="#分层模式（Layered-Architecture）" class="headerlink" title="分层模式（Layered Architecture）"></a>分层模式（Layered Architecture）</h1><h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>任何元素仅依赖本层其他元素或下层元素。（内聚）</p>
+<p>向上通信需要通过间接传递机制（回调、观察者模式）。</p>
+<p>有边界的上下文（Bounded Context）</p>
+<h2 id="常用分层结构"><a href="#常用分层结构" class="headerlink" title="常用分层结构"></a>常用分层结构</h2><ol>
+<li>用户界面层</li>
+<li>应用层：简单、不包含业务规则</li>
+<li>领域层：表达业务概念、模型</li>
+<li>基础设施层</li>
 </ol>
-<h1 id="g�Ͷ���"><a href="#g�Ͷ���" class="headerlink" title="ģ�Ͷ���"></a>ģ�Ͷ���</h1><h2 id="Entity��Reference-Object��"><a href="#Entity��Reference-Object��" class="headerlink" title="Entity��Reference Object��"></a>Entity��Reference Object��</h2><p>������</p>
+<h1 id="模型对象"><a href="#模型对象" class="headerlink" title="模型对象"></a>模型对象</h1><h2 id="Entity（Reference-Object）"><a href="#Entity（Reference-Object）" class="headerlink" title="Entity（Reference Object）"></a>Entity（Reference Object）</h2><p>特征：</p>
 <ol>
-<li>���ڱ�ʾ����Ķ���</li>
-<li>����Ψһ��ʶ�����ɱ�ʶ���֣��������������֣�<ol>
-<li>��ʶ�Ƿ���Ҫ��ȡ�����Ƿ����á�</li>
+<li>用于表示事物的对象；</li>
+<li>具有唯一标识；（由标识区分，而不是属性区分）<ol>
+<li>标识是否重要，取决于是否有用。</li>
 </ol>
 </li>
-<li>�����������ڣ�</li>
+<li>具有生命周期；</li>
 </ol>
-<p>ʾ����</p>
-<p>һ���ˣ���ʶ������֤�ţ���</p>
-<p>һ����λ����ʶ����λ�ţ���һ�ν��׵ȡ�</p>
-<h2 id="Value-Object"><a href="#Value-Object" class="headerlink" title="Value Object"></a>Value Object</h2><p>���ڱ�ʾ״̬���ԵĶ���</p>
-<p>������</p>
+<p>示例：</p>
+<p>一个人（标识：身份证号）、</p>
+<p>一个座位（标识：座位号）、一次交易等。</p>
+<h2 id="Value-Object"><a href="#Value-Object" class="headerlink" title="Value Object"></a>Value Object</h2><p>用于表示状态属性的对象；</p>
+<p>特征：</p>
 <ol>
-<li>�����������γ�һ������</li>
-<li>�������ʶ������Ҫ��Entity���ӣ�</li>
-<li>���Ϊ���ɱ䣬��ʵ�֣�������ģ���в�������Ҫ��Լ����<ol>
-<li>ʹ���µ��������</li>
+<li>包含的属性形成一个整体</li>
+<li>不分配标识（不需要像Entity复杂）</li>
+<li>设计为不可变，简化实现（避免在模型中产生不必要的约束）<ol>
+<li>使用新的替代更改</li>
 </ol>
 </li>
 </ol>
-<h3 id="���ƺ͹���"><a href="#���ƺ͹���" class="headerlink" title="���ƺ͹���"></a>���ƺ͹���</h3><table>
+<h3 id="复制和共享"><a href="#复制和共享" class="headerlink" title="复制和共享"></a>复制和共享</h3><table>
 <thead>
 <tr>
 <th>&#96;&#96;</th>
-<th>�ŵ�</th>
-<th>ȱ��</th>
-<th>����</th>
+<th>优点</th>
+<th>缺点</th>
+<th>场景</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>����</td>
+<td>复制</td>
 <td>&#96;&#96;</td>
-<td>���ܵ��±�������������</td>
-<td>ʵ�ֿɱ�</td>
+<td>可能导致被大量对象阻塞</td>
+<td>实现可变</td>
 </tr>
 <tr>
-<td>����</td>
-<td>��ʡ���ݿռ���ٶ�������</td>
-<td>�����ֲ�ʽϵͳ���ٶ�</td>
-<td>��������ͨ�ſ����Ͷ��󲻿ɱ�</td>
+<td>共享</td>
+<td>节省数据空间减少对象数量</td>
+<td>减慢分布式系统的速度</td>
+<td>传递引用通信开销低对象不可变</td>
 </tr>
 </tbody></table>
-<p>ʾ����</p>
-<p>address������street��city��state</p>
-<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>���ڱ�ʾ�����������</p>
-<h2 id="��g"><a href="#��g" class="headerlink" title="��ģ"></a>��ģ</h2><p>����</p>
+<p>示例：</p>
+<p>address包含：street、city、state</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>用于表示动作或操作；</p>
+<h2 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h2><p>特征</p>
 <ol>
-<li>��Ʊ�ʶ�����붨�����ʲô������������ͬ������<ol>
-<li>Ψһ�ԣ�����+Լ����ʵ��+Ψһ�ַ���</li>
+<li>设计标识：必须定义符合什么条件才算是相同的事物<ol>
+<li>唯一性：属性+约束；实例+唯一字符串</li>
 </ol>
 </li>
 </ol>
-<p>����ģ</p>
+<p>对象建模</p>
 <ol>
-<li>ȷ�������ԣ���ʩ������ʵ�������</li>
-<li>��ʶ������ʶ�𡢲��ҡ�ƥ�䣩</li>
-<li>���ԣ���ע��Ҫ���ԡ���������ϸ�����ԣ�</li>
-<li>��Ϊ</li>
+<li>确保连续性（措施：保持实体简练）</li>
+<li>标识（用于识别、查找、匹配）</li>
+<li>属性（关注必要属性、避免陷入细节属性）</li>
+<li>行为</li>
 </ol>
-<h1 id="����֮��L���"><a href="#����֮��L���" class="headerlink" title="����֮��Ĺ���"></a>����֮��Ĺ���</h1><p>����ͬ�����Եı�������</p>
-<p>����Խ��Խ��</p>
-<p>Entity��˫���������ά��</p>
-<p>VO˫�����������</p>
-<p>�Թ�������<strong>�����޶�</strong>�����Լ�ģ�ͣ�</p>
-<h2 id="�����L���"><a href="#�����L���" class="headerlink" title="�����Ŀ���"></a>�����Ŀ���</h2><ol>
-<li>�����������</li>
-<li>�����޶���</li>
-<li>��������Ҫ�Ĺ���</li>
+<h1 id="对象之间的关联"><a href="#对象之间的关联" class="headerlink" title="对象之间的关联"></a>对象之间的关联</h1><p>基于同样属性的遍历机制</p>
+<p>关联越少越简单</p>
+<p>Entity的双向关联难以维护</p>
+<p>VO双向关联无意义</p>
+<p>对关联进行<strong>规则限定</strong>，可以简化模型；</p>
+<h2 id="关联的控制"><a href="#关联的控制" class="headerlink" title="关联的控制"></a>关联的控制</h2><ol>
+<li>定义遍历方向</li>
+<li>定义限定符</li>
+<li>消除不必要的关联</li>
 </ol>
-<h1 id="����g�ͺ�UML������"><a href="#����g�ͺ�UML������" class="headerlink" title="����ģ�ͺ�UML������"></a>����ģ�ͺ�UML������</h1><h3 id="ϸ�ڲ��"><a href="#ϸ�ڲ��" class="headerlink" title="ϸ�ڲ��"></a><strong>ϸ�ڲ��</strong></h3><ul>
-<li><strong>����ģ��</strong> ��</li>
-<li>����̶Ƚϸߣ���ע����ҵ�������߼���</li>
-<li>������ʵ��ϸ�ڣ��緽�����������͡��������η��ȡ�</li>
-<li>���磬����ģ�Ϳ���ֻ��ʾ���������͡��ͻ���֮��Ĺ�ϵ�������漰������α��浽���ݿ⡣</li>
-<li><strong>UML ��ͼ</strong> ��</li>
-<li>ϸ�ڳ̶ȸ��ߣ����԰���������ԡ��������������η����������͵ȡ�</li>
-<li>�ʺ�������ƽ׶Σ�����������Ա����ϵͳ��ʵ��ϸ�ڡ�</li>
+<h1 id="领域模型和UML的区别"><a href="#领域模型和UML的区别" class="headerlink" title="领域模型和UML的区别"></a>领域模型和UML的区别</h1><h3 id="细节层次"><a href="#细节层次" class="headerlink" title="细节层次"></a><strong>细节层次</strong></h3><ul>
+<li><strong>领域模型</strong> ：</li>
+<li>抽象程度较高，关注的是业务概念和逻辑。</li>
+<li>不包含实现细节，如方法、数据类型、访问修饰符等。</li>
+<li>例如，领域模型可能只表示“订单”和“客户”之间的关系，而不涉及订单如何保存到数据库。</li>
+<li><strong>UML 类图</strong> ：</li>
+<li>细节程度更高，可以包含类的属性、方法、访问修饰符、参数类型等。</li>
+<li>适合用于设计阶段，帮助开发人员理解系统的实现细节。</li>
 </ul>
 
       
