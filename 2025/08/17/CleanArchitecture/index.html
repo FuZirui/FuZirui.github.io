@@ -6,12 +6,12 @@
   
   <title>整洁架构之道 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 面向对象编程 函数式编程">
+  <meta name="description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 限制程序的直接转移，goto的使用   面向对象编程 函数式编程 隔离可变性： 可变组件：事务性内存保护变量 不可变组件：函数实现      设计原则（SOLID）SRP单一职责原则主体：actor，一类人，有着相同的系统变更需求； 内聚：将对某类行为主体负责的代码绑定； 模块：一组内聚的函数、数据集合；仅对一类行为主体负责。 要求：  分离不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="整洁架构之道">
 <meta property="og:url" content="https://www.fuzirui.cn/2025/08/17/CleanArchitecture/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 面向对象编程 函数式编程">
+<meta property="og:description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 限制程序的直接转移，goto的使用   面向对象编程 函数式编程 隔离可变性： 可变组件：事务性内存保护变量 不可变组件：函数实现      设计原则（SOLID）SRP单一职责原则主体：actor，一类人，有着相同的系统变更需求； 内聚：将对某类行为主体负责的代码绑定； 模块：一组内聚的函数、数据集合；仅对一类行为主体负责。 要求：  分离不">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-17T04:30:00.000Z">
 <meta property="article:modified_time" content="2025-08-17T04:30:00.000Z">
@@ -113,11 +113,42 @@
 <li>架构价值</li>
 </ol>
 <h1 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h1><ol>
-<li>结构化编程</li>
-<li>面向对象编程</li>
-<li>函数式编程</li>
+<li>结构化编程<ol>
+<li>限制程序的直接转移，goto的使用</li>
 </ol>
-
+</li>
+<li>面向对象编程</li>
+<li>函数式编程<ol>
+<li>隔离可变性：<ol>
+<li>可变组件：事务性内存保护变量</li>
+<li>不可变组件：函数实现</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="设计原则（SOLID）"><a href="#设计原则（SOLID）" class="headerlink" title="设计原则（SOLID）"></a>设计原则（SOLID）</h1><h2 id="SRP单一职责原则"><a href="#SRP单一职责原则" class="headerlink" title="SRP单一职责原则"></a>SRP单一职责原则</h2><p>主体：actor，一类人，有着相同的系统变更需求；</p>
+<p>内聚：将对某类行为主体负责的代码绑定；</p>
+<p>模块：一组内聚的函数、数据集合；仅对一类行为主体负责。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li>分离不同主体依赖的代码；</li>
+</ol>
+<p><strong>反例：</strong></p>
+<ol>
+<li>一个类中的是三个接口，被三个不同的主体调用；<ol>
+<li>负面影响：一个主体需求的变化，影响到另一个主体；（比如共用了底层接口）</li>
+</ol>
+</li>
+</ol>
+<p><strong>常用措施：</strong></p>
+<ol>
+<li>数据与函数分离；负面影响：导致实例化类数量增加；</li>
+<li>外观模式：使用一个类负责实例化所有相关对象；</li>
+</ol>
+<h2 id="OCP开闭原则"><a href="#OCP开闭原则" class="headerlink" title="OCP开闭原则"></a>OCP开闭原则</h2><h2 id="LSP里氏替换原则"><a href="#LSP里氏替换原则" class="headerlink" title="LSP里氏替换原则"></a>LSP里氏替换原则</h2><h2 id="ISP接口隔离原则"><a href="#ISP接口隔离原则" class="headerlink" title="ISP接口隔离原则"></a>ISP接口隔离原则</h2><h2 id="DIP依赖倒置原则"><a href="#DIP依赖倒置原则" class="headerlink" title="DIP依赖倒置原则"></a>DIP依赖倒置原则</h2><h1 id="组件原则"><a href="#组件原则" class="headerlink" title="组件原则"></a>组件原则</h1><p>组件：最小部署单元，二进制文件，比如dll</p>
+<p>要求：保留独立部署、独立开发的能力</p>
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1>
       
     </div>
     <footer class="article-footer">
@@ -132,6 +163,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2025/08/23/DomainDrivenDesign/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2025/08/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -193,6 +233,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/08/23/DomainDrivenDesign/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2025/08/17/CleanArchitecture/">整洁架构之道</a>

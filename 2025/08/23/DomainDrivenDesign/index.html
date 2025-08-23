@@ -6,13 +6,15 @@
   
   <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="这是一个基于 Hexo 的博客">
-<meta property="og:type" content="website">
+  <meta name="description" content="title: �����������date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- ����ʼ�tags:- �ܹ����description:author: fuzirui����Entityʵ�壺һ�ֶ���ͨ����ʶ���壻 Factory������һ�ַ�װ���ƣ��Ѹ��Ӵ����߼���װ��">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
-<meta property="og:url" content="https://www.fuzirui.cn/index.html">
+<meta property="og:url" content="https://www.fuzirui.cn/2025/08/23/DomainDrivenDesign/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="这是一个基于 Hexo 的博客">
+<meta property="og:description" content="title: �����������date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- ����ʼ�tags:- �ܹ����description:author: fuzirui����Entityʵ�壺һ�ֶ���ͨ����ʶ���壻 Factory������һ�ַ�װ���ƣ��Ѹ��Ӵ����߼���װ��">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-23T02:56:40.609Z">
+<meta property="article:modified_time" content="2025-08-23T03:20:38.428Z">
 <meta property="article:author" content="FuZirui">
 <meta property="article:tag" content="技术">
 <meta property="article:tag" content="博客">
@@ -82,9 +84,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-DomainDrivenDesign" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-DomainDrivenDesign" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/08/23/DomainDrivenDesign/" class="article-date">
   <time class="dt-published" datetime="2025-08-23T02:56:40.609Z" itemprop="datePublished">2025-08-23</time>
@@ -204,146 +204,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-CleanArchitecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/08/17/CleanArchitecture/" class="article-date">
-  <time class="dt-published" datetime="2025-08-17T04:30:00.000Z" itemprop="datePublished">2025-08-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/08/17/CleanArchitecture/">整洁架构之道</a>
-    </h1>
+    <a href="/2025/08/17/CleanArchitecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">整洁架构之道</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="价值维度"><a href="#价值维度" class="headerlink" title="价值维度"></a>价值维度</h1><ol>
-<li>行为价值</li>
-<li>架构价值</li>
-</ol>
-<h1 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h1><ol>
-<li>结构化编程<ol>
-<li>限制程序的直接转移，goto的使用</li>
-</ol>
-</li>
-<li>面向对象编程</li>
-<li>函数式编程<ol>
-<li>隔离可变性：<ol>
-<li>可变组件：事务性内存保护变量</li>
-<li>不可变组件：函数实现</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h1 id="设计原则（SOLID）"><a href="#设计原则（SOLID）" class="headerlink" title="设计原则（SOLID）"></a>设计原则（SOLID）</h1><h2 id="SRP单一职责原则"><a href="#SRP单一职责原则" class="headerlink" title="SRP单一职责原则"></a>SRP单一职责原则</h2><p>主体：actor，一类人，有着相同的系统变更需求；</p>
-<p>内聚：将对某类行为主体负责的代码绑定；</p>
-<p>模块：一组内聚的函数、数据集合；仅对一类行为主体负责。</p>
-<p><strong>要求：</strong></p>
-<ol>
-<li>分离不同主体依赖的代码；</li>
-</ol>
-<p><strong>反例：</strong></p>
-<ol>
-<li>一个类中的是三个接口，被三个不同的主体调用；<ol>
-<li>负面影响：一个主体需求的变化，影响到另一个主体；（比如共用了底层接口）</li>
-</ol>
-</li>
-</ol>
-<p><strong>常用措施：</strong></p>
-<ol>
-<li>数据与函数分离；负面影响：导致实例化类数量增加；</li>
-<li>外观模式：使用一个类负责实例化所有相关对象；</li>
-</ol>
-<h2 id="OCP开闭原则"><a href="#OCP开闭原则" class="headerlink" title="OCP开闭原则"></a>OCP开闭原则</h2><h2 id="LSP里氏替换原则"><a href="#LSP里氏替换原则" class="headerlink" title="LSP里氏替换原则"></a>LSP里氏替换原则</h2><h2 id="ISP接口隔离原则"><a href="#ISP接口隔离原则" class="headerlink" title="ISP接口隔离原则"></a>ISP接口隔离原则</h2><h2 id="DIP依赖倒置原则"><a href="#DIP依赖倒置原则" class="headerlink" title="DIP依赖倒置原则"></a>DIP依赖倒置原则</h2><h1 id="组件原则"><a href="#组件原则" class="headerlink" title="组件原则"></a>组件原则</h1><p>组件：最小部署单元，二进制文件，比如dll</p>
-<p>要求：保留独立部署、独立开发的能力</p>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.fuzirui.cn/2025/08/17/CleanArchitecture/" data-id="cmef5s0sh0001ikuzesp77xp0" data-title="整洁架构之道" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">架构设计</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/08/17/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2025-08-17T02:24:02.508Z" itemprop="datePublished">2025-08-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/08/17/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.fuzirui.cn/2025/08/17/hello-world/" data-id="cmef5s0sc0000ikuzejrlb2le" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
