@@ -4,21 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>我的博客</title>
+  <title>领域驱动设计 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="title: 领域驱动设计date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- 读书笔记tags:- 架构设计description:author: fuzirui术语Entity实体：一种对象，通过标识定义； Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型； Function函数：没有副作">
+  <meta name="description" content="术语Entity实体：一种对象，通过标识定义； Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型； Function函数：没有副作用的操作； Repository仓库：一种把存储、检索行为封装起来的机制，类似于对象集合； Service服务：一种作为接口提供的操作，无封装的状态； Standalone class（孤立的类）； Value Object值对象： 分层模式（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客">
+<meta property="og:title" content="领域驱动设计">
 <meta property="og:url" content="https://www.fuzirui.cn/2025/08/23/DomainDrivenDesign/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="title: 领域驱动设计date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- 读书笔记tags:- 架构设计description:author: fuzirui术语Entity实体：一种对象，通过标识定义； Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型； Function函数：没有副作">
+<meta property="og:description" content="术语Entity实体：一种对象，通过标识定义； Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型； Function函数：没有副作用的操作； Repository仓库：一种把存储、检索行为封装起来的机制，类似于对象集合； Service服务：一种作为接口提供的操作，无封装的状态； Standalone class（孤立的类）； Value Object值对象： 分层模式（">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-23T02:56:40.609Z">
-<meta property="article:modified_time" content="2025-08-23T05:53:17.926Z">
+<meta property="article:published_time" content="2025-08-23T04:30:00.000Z">
+<meta property="article:modified_time" content="2025-08-23T04:30:00.000Z">
 <meta property="article:author" content="FuZirui">
-<meta property="article:tag" content="技术">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="架构设计">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
@@ -87,17 +85,30 @@
         <section id="main"><article id="post-DomainDrivenDesign" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/08/23/DomainDrivenDesign/" class="article-date">
-  <time class="dt-published" datetime="2025-08-23T02:56:40.609Z" itemprop="datePublished">2025-08-23</time>
+  <time class="dt-published" datetime="2025-08-23T04:30:00.000Z" itemprop="datePublished">2025-08-23</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      领域驱动设计
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title-领域驱动设计date-2025-08-23-12-30-00updated-2025-08-12-12-30-00categories-读书笔记tags-架构设计description-author-fuzirui"><a href="#title-领域驱动设计date-2025-08-23-12-30-00updated-2025-08-12-12-30-00categories-读书笔记tags-架构设计description-author-fuzirui" class="headerlink" title="title: 领域驱动设计date: 2025-08-23 12:30:00updated: 2025-08-12 12:30:00categories:- 读书笔记tags:- 架构设计description:author: fuzirui"></a>title: 领域驱动设计<br>date: 2025-08-23 12:30:00<br>updated: 2025-08-12 12:30:00<br>categories:<br>- 读书笔记<br>tags:<br>- 架构设计<br>description:<br>author: fuzirui</h2><h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><p>Entity实体：一种对象，通过标识定义；</p>
+        <h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><p>Entity实体：一种对象，通过标识定义；</p>
 <p>Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型；</p>
 <p>Function函数：没有副作用的操作；</p>
 <p>Repository仓库：一种把存储、检索行为封装起来的机制，类似于对象集合；</p>
@@ -197,10 +208,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.fuzirui.cn/2025/08/23/DomainDrivenDesign/" data-id="cmenud2ts00004guzbxiha2e6" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://www.fuzirui.cn/2025/08/23/DomainDrivenDesign/" data-id="cmenujehc0001bcuz2u948p9w" data-title="领域驱动设计" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag">架构设计</a></li></ul>
+
     </footer>
   </div>
   
@@ -208,9 +221,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2025/08/17/CleanArchitecture/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025/08/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">整洁架构之道</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
@@ -269,15 +282,15 @@
       <ul>
         
           <li>
-            <a href="/2025/08/23/DomainDrivenDesign/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2025/08/17/CleanArchitecture/">整洁架构之道</a>
+            <a href="/2025/08/23/DomainDrivenDesign/">领域驱动设计</a>
           </li>
         
           <li>
             <a href="/2025/08/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2025/08/17/CleanArchitecture/">整洁架构之道</a>
           </li>
         
       </ul>
