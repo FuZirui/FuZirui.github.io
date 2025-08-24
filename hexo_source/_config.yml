@@ -72,7 +72,7 @@ pagination_dir: page             # 分页目录
 
 # 扩展
 ## 插件和主题配置
-theme: landscape                 # 默认主题（可替换为其他主题，如 next）
+theme: next                 # 默认主题（可替换为其他主题，如 next）
 
 # 部署配置
 ## 文档：https://hexo.io/zh-cn/docs/deployment.html
@@ -97,3 +97,20 @@ social:
 search:
   enable: true
 
+#阅读时间与提示
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 2    
+  wpm: 275
+  suffix: "mins."
+
+# 统计功能（需配合主题或插件）
+busuanzi_count:
+  enable: true
+  total_visitors: true    # 显示总访客数
+  total_views: true       # 显示总访问量
+  post_views: true        # 显示单篇文章阅读量
