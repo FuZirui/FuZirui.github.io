@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.fuzirui.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.24.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 限制程序的直接转移，goto的使用   面向对象编程 函数式编程 隔离可变性： 可变组件：事务性内存保护变量 不可变组件：函数实现      设计原则（SOLID）SRP单一职责原则主体：actor，一类人，有着相同的系统变更需求； 内聚：将对某类行为主体负责的代码绑定； 模块：一组内聚的函数、数据集合；仅对一类行为主体负责。 要求：  分离不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整洁架构之道">
+<meta property="og:url" content="https://www.fuzirui.cn/2025/08/17/CleanArchitecture/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 限制程序的直接转移，goto的使用   面向对象编程 函数式编程 隔离可变性： 可变组件：事务性内存保护变量 不可变组件：函数实现      设计原则（SOLID）SRP单一职责原则主体：actor，一类人，有着相同的系统变更需求； 内聚：将对某类行为主体负责的代码绑定； 模块：一组内聚的函数、数据集合；仅对一类行为主体负责。 要求：  分离不">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-17T04:30:00.000Z">
+<meta property="article:modified_time" content="2025-08-17T04:30:00.000Z">
+<meta property="article:author" content="FuZirui">
+<meta property="article:tag" content="架构设计">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.fuzirui.cn/2025/08/17/CleanArchitecture/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.fuzirui.cn/2025/08/17/CleanArchitecture/","path":"2025/08/17/CleanArchitecture/","title":"整洁架构之道"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>整洁架构之道 | 我的博客</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">我的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">分享技术与生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%B7%E5%80%BC%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">价值维度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">编程范式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88SOLID%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">设计原则（SOLID）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SRP%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99"><span class="nav-number">3.1.</span> <span class="nav-text">SRP单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OCP%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="nav-number">3.2.</span> <span class="nav-text">OCP开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSP%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99"><span class="nav-number">3.3.</span> <span class="nav-text">LSP里氏替换原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISP%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99"><span class="nav-number">3.4.</span> <span class="nav-text">ISP接口隔离原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIP%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99"><span class="nav-number">3.5.</span> <span class="nav-text">DIP依赖倒置原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8E%9F%E5%88%99"><span class="nav-number">4.</span> <span class="nav-text">组件原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">设计模式</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FuZirui</p>
+  <div class="site-description" itemprop="description">这是一个基于 Hexo 的博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/CleanArchitecture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="整洁架构之道 | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          整洁架构之道
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="价值维度"><a href="#价值维度" class="headerlink" title="价值维度"></a>价值维度</h1><ol>
+<li>行为价值</li>
+<li>架构价值</li>
+</ol>
+<h1 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h1><ol>
+<li>结构化编程<ol>
+<li>限制程序的直接转移，goto的使用</li>
+</ol>
+</li>
+<li>面向对象编程</li>
+<li>函数式编程<ol>
+<li>隔离可变性：<ol>
+<li>可变组件：事务性内存保护变量</li>
+<li>不可变组件：函数实现</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="设计原则（SOLID）"><a href="#设计原则（SOLID）" class="headerlink" title="设计原则（SOLID）"></a>设计原则（SOLID）</h1><h2 id="SRP单一职责原则"><a href="#SRP单一职责原则" class="headerlink" title="SRP单一职责原则"></a>SRP单一职责原则</h2><p>主体：actor，一类人，有着相同的系统变更需求；</p>
+<p>内聚：将对某类行为主体负责的代码绑定；</p>
+<p>模块：一组内聚的函数、数据集合；仅对一类行为主体负责。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li>分离不同主体依赖的代码；</li>
+</ol>
+<p><strong>反例：</strong></p>
+<ol>
+<li>一个类中的是三个接口，被三个不同的主体调用；<ol>
+<li>负面影响：一个主体需求的变化，影响到另一个主体；（比如共用了底层接口）</li>
+</ol>
+</li>
+</ol>
+<p><strong>常用措施：</strong></p>
+<ol>
+<li>数据与函数分离；负面影响：导致实例化类数量增加；</li>
+<li>外观模式：使用一个类负责实例化所有相关对象；</li>
+</ol>
+<h2 id="OCP开闭原则"><a href="#OCP开闭原则" class="headerlink" title="OCP开闭原则"></a>OCP开闭原则</h2><h2 id="LSP里氏替换原则"><a href="#LSP里氏替换原则" class="headerlink" title="LSP里氏替换原则"></a>LSP里氏替换原则</h2><h2 id="ISP接口隔离原则"><a href="#ISP接口隔离原则" class="headerlink" title="ISP接口隔离原则"></a>ISP接口隔离原则</h2><h2 id="DIP依赖倒置原则"><a href="#DIP依赖倒置原则" class="headerlink" title="DIP依赖倒置原则"></a>DIP依赖倒置原则</h2><h1 id="组件原则"><a href="#组件原则" class="headerlink" title="组件原则"></a>组件原则</h1><p>组件：最小部署单元，二进制文件，比如dll</p>
+<p>要求：保留独立部署、独立开发的能力</p>
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" rel="tag"># 架构设计</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/08/23/DomainDrivenDesign/" rel="next" title="领域驱动设计">
+                  领域驱动设计 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">FuZirui</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

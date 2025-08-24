@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.fuzirui.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.24.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="这是一个基于 Hexo 的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="我的博客">
+<meta property="og:url" content="https://www.fuzirui.cn/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="这是一个基于 Hexo 的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="FuZirui">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.fuzirui.cn/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>我的博客</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">我的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">分享技术与生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FuZirui</p>
+  <div class="site-description" itemprop="description">这是一个基于 Hexo 的博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/24/DesignMode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/24/DesignMode/" class="post-title-link" itemprop="url">设计模式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-24 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-24T12:30:00+08:00">2025-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="重构技巧"><a href="#重构技巧" class="headerlink" title="重构技巧"></a>重构技巧</h1><p>静态绑定-&gt;动态绑定</p>
+<p>早绑定-&gt;晚绑定</p>
+<p>继承-&gt;组合</p>
+<p>编译时依赖-&gt;运行时依赖</p>
+<p>紧耦合-&gt;松耦合</p>
+<p>类的设计：</p>
+<p>组合优于继承。</p>
+<p>8大原则</p>
+<p>更改封闭拓展开放：通过子类继承父类,重写父类虚函数。</p>
+<p>复用：编译后的二进制复用，非代码的复用.重构获得模式，寻找变化点，隔离稳定与变化。</p>
+<p>了解设计模式的框架，知道什么场景使用什么设计模式。</p>
+<p>组件协作</p>
+<p>1、模板模式：</p>
+<p>驱动器状态机存在稳定的整体结构、子步骤存在多变的需求.父类实现框架、调用虚函数，推荐声明为protected注：父类的西沟为虚函数</p>
+<p>2、策略模式：</p>
+<p>速度模式位置模式切换使用的算法经常变化，可能新增传统做法：switch case，违背开闭原则。拓展方式解决：提取基类算法纯虚，派生具体子类算法.使用基类指针，可以结合工厂模式，创建返回具体的子类算法，可互相替换.消除条件判断解耦.绝对稳定不变的可以用枚举坏味道</p>
+<p>3、观察者模式（事件模式）</p>
+<p>目标对象变化，观察者对象自动得到通知并响应；</p>
+<p>观察者依赖抽象，抽象通知；</p>
+<p>逻辑不要耦合业务界面，松耦合；</p>
+<p>vector或者list支持多个观察者；</p>
+<p>可增删单一职责类装饰模式组合（has a）优于继承（is a）继承+组合：完善接口规范，支持shi?x解决主体类在多个方向上的拓展多继承：继承多个接口.抽象基类：具体转抽象静态转动态、继?转组合框架与应用、晚绑定：lib调用app（面向对象），延迟到子类（父类定义虚函数，子类重写）实现松耦合早绑定：app调用lib职责链避免发送者和接收者之间的耦合.行为变化类命令模式与函数对象类似.行为封装为对象.请求与实现解耦.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/23/DomainDrivenDesign/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/23/DomainDrivenDesign/" class="post-title-link" itemprop="url">领域驱动设计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-23 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-23T12:30:00+08:00">2025-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h1><p>Entity实体</p>
+<p>Factory工厂：一种封装机制，把复杂创建逻辑封装，抽象出创建的对象类型；</p>
+<p>Function函数：没有副作用的操作；</p>
+<p>Repository仓库：一种把存储、检索行为封装起来的机制，类似于对象集合；</p>
+<p>Service服务：一种作为接口提供的操作，无封装的状态；</p>
+<p>Standalone class（孤立的类）；</p>
+<p>Value Object值对象：</p>
+<p>Ubiquitous Language：通识语言，术语；</p>
+<h1 id="分层模式（Layered-Architecture）"><a href="#分层模式（Layered-Architecture）" class="headerlink" title="分层模式（Layered Architecture）"></a>分层模式（Layered Architecture）</h1><h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>任何元素仅依赖本层其他元素或下层元素。（内聚）</p>
+<p>向上通信需要通过间接传递机制（回调、观察者模式）。</p>
+<p>有边界的上下文（Bounded Context）</p>
+<h2 id="常用分层结构"><a href="#常用分层结构" class="headerlink" title="常用分层结构"></a>常用分层结构</h2><ol>
+<li>用户界面层</li>
+<li>应用层：简单、不包含业务规则</li>
+<li>领域层：表达业务概念、模型</li>
+<li>基础设施层</li>
+</ol>
+<h1 id="模型元素"><a href="#模型元素" class="headerlink" title="模型元素"></a>模型元素</h1><h2 id="Entity（Reference-Object）"><a href="#Entity（Reference-Object）" class="headerlink" title="Entity（Reference Object）"></a>Entity（Reference Object）</h2><p>特征：</p>
+<ol>
+<li>一种表示事物的对象；</li>
+<li>具有唯一标识（由标识区分，而不是属性区分）<ol>
+<li><strong>用于识别、查找、匹配对象；</strong></li>
+</ol>
+</li>
+<li>生命周期内就有连续性<ol>
+<li>形式、内容可变；</li>
+</ol>
+</li>
+</ol>
+<p>建模思路：</p>
+<ol>
+<li><p>设计标识：</p>
+<ol>
+<li>必须具有唯一性（即标识一致为同一实体）<ol>
+<li>属性+唯一性约束</li>
+<li>实例名+唯一符号数字</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>属性：与标识有关的属性留在实体内；（关注必要属性、避免陷入细节属性）</p>
+</li>
+<li><p>行为：转移到关联的其他对象中；</p>
+</li>
+<li><p>确保连续性（措施：保持实体简练）</p>
+</li>
+</ol>
+<p>示例：</p>
+<ol>
+<li>一个人（标识：身份证号、name、手机号、地址等）；</li>
+<li>一个座位（标识：座位号）；</li>
+<li>仿真软件中一个元器件标识；</li>
+</ol>
+<h2 id="Value-Object"><a href="#Value-Object" class="headerlink" title="Value Object"></a>Value Object</h2><p>特征：</p>
+<ol>
+<li>描述一个事务的特征，表示状态属性的对象；</li>
+<li>包含的属性形成一个整体；</li>
+<li>标识的分配会导致模型的复杂度增加，VO不分配标识</li>
+<li>设计为不可变，<ol>
+<li>简化实现（避免在模型中产生不必要的约束）</li>
+<li>保证安全</li>
+<li>使用新的替代更改<ol>
+<li>可以引用entity：比如路线是VO，城市是Entity</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>避免双向依赖；</li>
+</ol>
+<p>示例：</p>
+<ol>
+<li>address是一个VO，包含：street、city、state</li>
+</ol>
+<p>复制和共享</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>优点</th>
+<th>缺点</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>复制</td>
+<td></td>
+<td>可能导致被大量对象阻塞</td>
+<td>实现可变</td>
+</tr>
+<tr>
+<td>共享</td>
+<td>节省数据空间减少对象数量</td>
+<td>减慢分布式系统的速度</td>
+<td>传递引用通信开销低对象不可变</td>
+</tr>
+</tbody></table>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>特征</p>
+<ol>
+<li>用于表示动作或操作；（动词）</li>
+<li>不属于任何entity或者OV；</li>
+<li>避免导致对象的混乱；</li>
+</ol>
+<p>建模思路</p>
+<ol>
+<li>接口由领域模型定义</li>
+<li>无状态</li>
+<li>参数或结果为Entity或者OV</li>
+</ol>
+<h2 id="MODULE-PACKAGE"><a href="#MODULE-PACKAGE" class="headerlink" title="MODULE(PACKAGE)"></a>MODULE(PACKAGE)</h2><p>特征：</p>
+<ol>
+<li>高内聚、低耦合</li>
+</ol>
+<p>按技术分包</p>
+<p>按需求任务分包</p>
+<h1 id="对象之间的关联"><a href="#对象之间的关联" class="headerlink" title="对象之间的关联"></a>对象之间的关联</h1><p>基于同样属性的遍历机制</p>
+<p>关联越少越简单</p>
+<p>Entity的双向关联难以维护</p>
+<p>VO双向关联无意义</p>
+<p>对关联进行<strong>规则限定</strong>，可以简化模型；</p>
+<h2 id="关联的控制"><a href="#关联的控制" class="headerlink" title="关联的控制"></a>关联的控制</h2><ol>
+<li>定义遍历方向</li>
+<li>定义限定符</li>
+<li>消除不必要的关联</li>
+</ol>
+<h1 id="领域模型和UML的区别"><a href="#领域模型和UML的区别" class="headerlink" title="领域模型和UML的区别"></a>领域模型和UML的区别</h1><h3 id="细节层次"><a href="#细节层次" class="headerlink" title="细节层次"></a><strong>细节层次</strong></h3><ul>
+<li><strong>领域模型</strong> ：</li>
+<li>抽象程度较高，关注的是业务概念和逻辑。</li>
+<li>不包含实现细节，如方法、数据类型、访问修饰符等。</li>
+<li>例如，领域模型可能只表示“订单”和“客户”之间的关系，而不涉及订单如何保存到数据库。</li>
+<li><strong>UML 类图</strong> ：</li>
+<li>细节程度更高，可以包含类的属性、方法、访问修饰符、参数类型等。</li>
+<li>适合用于设计阶段，帮助开发人员理解系统的实现细节。</li>
+</ul>
+<h1 id="对象生命周期的管理"><a href="#对象生命周期的管理" class="headerlink" title="对象生命周期的管理"></a>对象生命周期的管理</h1><h2 id="AGGREGATE聚合"><a href="#AGGREGATE聚合" class="headerlink" title="AGGREGATE聚合"></a>AGGREGATE聚合</h2><p>定义对象的所属关系和边界；</p>
+<p>外部对象无法引用聚合内部的entity（除了根entity）；</p>
+<p>可以传递VO</p>
+<h2 id="FACTORY工厂"><a href="#FACTORY工厂" class="headerlink" title="FACTORY工厂"></a>FACTORY工厂</h2><p>职责</p>
+<ol>
+<li>创建复杂对象（AGGREGATE）</li>
+</ol>
+<p>特征</p>
+<ol>
+<li>每个创建方法是原子的</li>
+<li>工厂应该被抽象为所需的类型</li>
+<li>合理选择输入参数</li>
+<li>区分entity factory 和 VO factory</li>
+</ol>
+<h2 id="REPOSITORY仓库"><a href="#REPOSITORY仓库" class="headerlink" title="REPOSITORY仓库"></a>REPOSITORY仓库</h2><p>查找对象</p>
+<p>在模型中加入对象或关系，将概念显示表达出来</p>
+<h1 id="柔性设计"><a href="#柔性设计" class="headerlink" title="柔性设计"></a>柔性设计</h1><h2 id="Intention-Revealing-Interfaces"><a href="#Intention-Revealing-Interfaces" class="headerlink" title="Intention Revealing Interfaces"></a>Intention Revealing Interfaces</h2><p>组件的使用者，应该不需要研究其内部实现；</p>
+<p>命名中描述效果和目的，不要表露通过何种方式实现；</p>
+<h2 id="Side-Effect-Free-Function"><a href="#Side-Effect-Free-Function" class="headerlink" title="Side Effect Free Function"></a>Side Effect Free Function</h2><p>命令</p>
+<p>查询</p>
+<h2 id="Assertion"><a href="#Assertion" class="headerlink" title="Assertion"></a>Assertion</h2><h2 id="Conceptual-Contour概念轮廓"><a href="#Conceptual-Contour概念轮廓" class="headerlink" title="Conceptual Contour概念轮廓"></a>Conceptual Contour概念轮廓</h2><h2 id="Standalone-Class"><a href="#Standalone-Class" class="headerlink" title="Standalone Class"></a>Standalone Class</h2><h2 id="Closure-of-operation闭合操作"><a href="#Closure-of-operation闭合操作" class="headerlink" title="Closure of operation闭合操作"></a>Closure of operation闭合操作</h2><h1 id="保持模型的完整性"><a href="#保持模型的完整性" class="headerlink" title="保持模型的完整性"></a>保持模型的完整性</h1><p>明确定义模型应用的上下文；</p>
+<h2 id="Bounded-Context有限上下文"><a href="#Bounded-Context有限上下文" class="headerlink" title="Bounded Context有限上下文"></a>Bounded Context有限上下文</h2><h2 id="Continuous-Integration持续集成"><a href="#Continuous-Integration持续集成" class="headerlink" title="Continuous Integration持续集成"></a>Continuous Integration持续集成</h2><h2 id="Context-Map"><a href="#Context-Map" class="headerlink" title="Context Map"></a>Context Map</h2><h2 id="Shared-Kernel共享内核"><a href="#Shared-Kernel共享内核" class="headerlink" title="Shared Kernel共享内核"></a>Shared Kernel共享内核</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/CleanArchitecture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/17/CleanArchitecture/" class="post-title-link" itemprop="url">整洁架构之道</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="价值维度"><a href="#价值维度" class="headerlink" title="价值维度"></a>价值维度</h1><ol>
+<li>行为价值</li>
+<li>架构价值</li>
+</ol>
+<h1 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h1><ol>
+<li>结构化编程<ol>
+<li>限制程序的直接转移，goto的使用</li>
+</ol>
+</li>
+<li>面向对象编程</li>
+<li>函数式编程<ol>
+<li>隔离可变性：<ol>
+<li>可变组件：事务性内存保护变量</li>
+<li>不可变组件：函数实现</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="设计原则（SOLID）"><a href="#设计原则（SOLID）" class="headerlink" title="设计原则（SOLID）"></a>设计原则（SOLID）</h1><h2 id="SRP单一职责原则"><a href="#SRP单一职责原则" class="headerlink" title="SRP单一职责原则"></a>SRP单一职责原则</h2><p>主体：actor，一类人，有着相同的系统变更需求；</p>
+<p>内聚：将对某类行为主体负责的代码绑定；</p>
+<p>模块：一组内聚的函数、数据集合；仅对一类行为主体负责。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li>分离不同主体依赖的代码；</li>
+</ol>
+<p><strong>反例：</strong></p>
+<ol>
+<li>一个类中的是三个接口，被三个不同的主体调用；<ol>
+<li>负面影响：一个主体需求的变化，影响到另一个主体；（比如共用了底层接口）</li>
+</ol>
+</li>
+</ol>
+<p><strong>常用措施：</strong></p>
+<ol>
+<li>数据与函数分离；负面影响：导致实例化类数量增加；</li>
+<li>外观模式：使用一个类负责实例化所有相关对象；</li>
+</ol>
+<h2 id="OCP开闭原则"><a href="#OCP开闭原则" class="headerlink" title="OCP开闭原则"></a>OCP开闭原则</h2><h2 id="LSP里氏替换原则"><a href="#LSP里氏替换原则" class="headerlink" title="LSP里氏替换原则"></a>LSP里氏替换原则</h2><h2 id="ISP接口隔离原则"><a href="#ISP接口隔离原则" class="headerlink" title="ISP接口隔离原则"></a>ISP接口隔离原则</h2><h2 id="DIP依赖倒置原则"><a href="#DIP依赖倒置原则" class="headerlink" title="DIP依赖倒置原则"></a>DIP依赖倒置原则</h2><h1 id="组件原则"><a href="#组件原则" class="headerlink" title="组件原则"></a>组件原则</h1><p>组件：最小部署单元，二进制文件，比如dll</p>
+<p>要求：保留独立部署、独立开发的能力</p>
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">FuZirui</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
