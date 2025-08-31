@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -144,7 +144,7 @@
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -170,7 +170,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/24/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/DesignMode/">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/24/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1_Singlestone/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -188,7 +188,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/24/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/DesignMode/" class="post-title-link" itemprop="url">设计模式</a>
+          <a href="/2025/08/24/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1_Singlestone/" class="post-title-link" itemprop="url">单例模式</a>
         </h2>
 
         <div class="post-meta-container">
@@ -218,7 +218,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>674</span>
+      <span>679</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -236,18 +236,149 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="重构技巧"><a href="#重构技巧" class="headerlink" title="重构技巧"></a>重构技巧</h1><p>静态绑定-&gt;动态绑定</p>
-<p>早绑定-&gt;晚绑定</p>
-<p>继承-&gt;组合</p>
-<p>编译时依赖-&gt;运行时依赖</p>
-<p>紧耦合-&gt;松耦合</p>
-<p>类的设计：</p>
-<p>组合优于继承。</p>
-<p>8大原则</p>
-<p>更改封闭拓展开放：通过子类继承父类,重写父类虚函数。</p>
-<p>复用：编译后的二进制复用，非代码的复用.重构获得模式，寻找变化点，隔离稳定与变化。</p>
-<p>了解设计模式的框架，知道什么场景使用什么设计模式。</p>
-<p>组件协作</p>
+          <h1 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">class Singleton &#123;</span><br><span class="line">    - static Singleton* instance</span><br><span class="line">    - Singleton()</span><br><span class="line">    + static Singleton* getInstance()</span><br><span class="line">    + void doSomething()</span><br><span class="line">    - Singleton(const Singleton&amp;)</span><br><span class="line">    - Singleton&amp; operator=(const Singleton&amp;)</span><br><span class="line">&#125;</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure>
+
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// Singleton.h</span><br><span class="line">#pragma once</span><br><span class="line"></span><br><span class="line">class Singleton &#123;</span><br><span class="line">private:</span><br><span class="line">    static Singleton* instance;</span><br><span class="line">    Singleton() &#123;&#125; // 私有构造函数</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    static Singleton* getInstance() &#123;</span><br><span class="line">        if (instance == nullptr) &#123;</span><br><span class="line">            instance = new Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 禁止拷贝和赋值</span><br><span class="line">    Singleton(const Singleton&amp;) = delete;</span><br><span class="line">    Singleton&amp; operator=(const Singleton&amp;) = delete;</span><br><span class="line"></span><br><span class="line">    void doSomething() &#123;</span><br><span class="line">        // 业务逻辑</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 初始化静态成员</span><br><span class="line">Singleton* Singleton::instance = nullptr;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/24/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DesignMode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/24/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/DesignMode/" class="post-title-link" itemprop="url">设计模式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-24 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-24T12:30:00+08:00">2025-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><ol>
+<li>复用：编译后的二进制复用，非代码的复用；</li>
+<li>了解设计模式的框架，知道什么场景使用什么设计模式。</li>
+</ol>
+<h1 id="重构技巧"><a href="#重构技巧" class="headerlink" title="重构技巧"></a>重构技巧</h1><ol>
+<li>重构获得模式，寻找变化点，隔离稳定与变化；</li>
+<li>静态绑定-&gt;动态绑定</li>
+<li>早绑定-&gt;晚绑定</li>
+<li>继承-&gt;组合<ol>
+<li>合成聚合：尽量使用合成、聚合，尽量不要使用类继承。</li>
+<li>继承属于强耦合，父类更改，子类必须要变。</li>
+</ol>
+</li>
+<li>编译时依赖-&gt;运行时依赖</li>
+<li>紧耦合-&gt;松耦合</li>
+<li>无环依赖</li>
+<li>避免贫血类：只有数据没有功能的类。</li>
+<li>避免上帝类</li>
+<li>只说不问：可以由类独立完成的操作，不需要开放过多的接口。</li>
+<li>避免使用静态成员</li>
+<li>让类尽可能小</li>
+</ol>
+<h1 id="面向对象编程的特征"><a href="#面向对象编程的特征" class="headerlink" title="面向对象编程的特征"></a>面向对象编程的特征</h1><ol>
+<li>变量声明为抽象基类；</li>
+<li>晚绑定：运行时绑定；</li>
+<li>依赖接口編程，避免依赖实现；</li>
+<li>组合优于继承；</li>
+<li>拓展性：可通过子类重写父类虚函数；</li>
+<li>抽象、封装、多态；</li>
+<li>隔离变化与稳定；</li>
+<li>界面与业务分隔；</li>
+</ol>
+<h1 id="编码的原则"><a href="#编码的原则" class="headerlink" title="编码的原则"></a>编码的原则</h1><ol>
+<li>保持简单和直接原则（KISS）</li>
+<li>不需要原则（YAGNI）</li>
+<li>避免复制原则（DRY）</li>
+<li>信息隐藏原则</li>
+<li>高内聚原则</li>
+<li>松耦合原则</li>
+<li>小心优化原则</li>
+<li>最少惊讶原则</li>
+<li>童子军原则</li>
+<li>迪米特法则（不要和陌生人说话）</li>
+<li>控制依赖方向</li>
+</ol>
+<p>如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用，如果其中一个类需要调用另外一个类的某个方法的话，可以通过第三者转发调用。</p>
+<p>降低对象间的耦合，提高系统的可维护性，在模块间应该只通过接口编程，而不会理会模块的内部工作原理，它可以使各个模块耦合度讲到最低，促进软件的复用。</p>
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p>组件协作</p>
 <p>1、模板模式：</p>
 <p>驱动器状态机存在稳定的整体结构、子步骤存在多变的需求.父类实现框架、调用虚函数，推荐声明为protected注：父类的西沟为虚函数</p>
 <p>2、策略模式：</p>
@@ -578,7 +709,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>376</span>
+      <span>79</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -615,7 +746,395 @@
 </ol>
 </li>
 </ol>
-<h1 id="设计原则（SOLID）"><a href="#设计原则（SOLID）" class="headerlink" title="设计原则（SOLID）"></a>设计原则（SOLID）</h1><h2 id="SRP单一职责原则"><a href="#SRP单一职责原则" class="headerlink" title="SRP单一职责原则"></a>SRP单一职责原则</h2><p>主体：actor，一类人，有着相同的系统变更需求；</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/Linux/%E5%86%85%E6%A0%B8%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/Linux/%E5%86%85%E6%A0%B8%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">Linux内核设计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>0</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E7%9A%84%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%9E%B6%E6%9E%84%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">架构的设计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>49</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="软件系统"><a href="#软件系统" class="headerlink" title="软件系统"></a>软件系统</h1><p>开发、部署、运行、维护</p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>支持系统的生命周期</p>
+<p>成本最小化</p>
+<h1 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h1><p>易于理解</p>
+<p>易于开发</p>
+<p>易于维护</p>
+<p>易于部署</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E7%BB%84%E4%BB%B6%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E7%BB%84%E4%BB%B6%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" class="post-title-link" itemprop="url">组件的设计原则</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>259</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>组件：最小部署单元，二进制文件，比如dll</p>
+<p>要求：保留独立部署、独立开发的能力</p>
+<h2 id="无环依赖原则"><a href="#无环依赖原则" class="headerlink" title="无环依赖原则"></a>无环依赖原则</h2><h2 id="稳定依赖原则"><a href="#稳定依赖原则" class="headerlink" title="稳定依赖原则"></a>稳定依赖原则</h2><p>FanIn：外部依赖本组件的数量</p>
+<p>FanOut：依赖外部类的数量</p>
+<p>不稳定性：I &#x3D; FanOut &#x2F; （FanIn + FanOut）</p>
+<h2 id="稳定抽象原则"><a href="#稳定抽象原则" class="headerlink" title="稳定抽象原则"></a>稳定抽象原则</h2><p>Na：抽象类和接口的数量</p>
+<p>Nc：类的数量</p>
+<p>抽象性：A&#x3D;Na&#x2F;Nc</p>
+<h1 id="内聚原则"><a href="#内聚原则" class="headerlink" title="内聚原则"></a>内聚原则</h1><h2 id="REP原则：复用、发布等价原则（包容性，使组件变大）"><a href="#REP原则：复用、发布等价原则（包容性，使组件变大）" class="headerlink" title="REP原则：复用、发布等价原则（包容性，使组件变大）"></a>REP原则：复用、发布等价原则（包容性，使组件变大）</h2><h2 id="CCP原则：共同闭合原则（包容性，使组件变大）"><a href="#CCP原则：共同闭合原则（包容性，使组件变大）" class="headerlink" title="CCP原则：共同闭合原则（包容性，使组件变大）"></a>CCP原则：共同闭合原则（包容性，使组件变大）</h2><p>变更原因相同的类内聚为一个组件；</p>
+<h2 id="CRP原则：共同复用原则（排他性，使组件变小）"><a href="#CRP原则：共同复用原则（排他性，使组件变小）" class="headerlink" title="CRP原则：共同复用原则（排他性，使组件变小）"></a>CRP原则：共同复用原则（排他性，使组件变小）</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" class="post-title-link" itemprop="url">设计原则SOLID</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>810</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="软件架构师的基本素养"><a href="#软件架构师的基本素养" class="headerlink" title="软件架构师的基本素养"></a>软件架构师的基本素养</h1><p>在不改变接口的情况下实现添加功能；</p>
+<p>组件设计折中选择复用性与可维护性；Nc</p>
+<h1 id="1、单一职责原则（SRP）"><a href="#1、单一职责原则（SRP）" class="headerlink" title="1、单一职责原则（SRP）"></a>1、单一职责原则（SRP）</h1><p>每个函数只做一件事情；</p>
+<p>每个模块仅对一类行为主体负责类，对外只能提供一种功能，而引起类变化的原因应该只有一个。</p>
+<p>主体：actor，一类人，有着相同的系统变更需求；</p>
 <p>内聚：将对某类行为主体负责的代码绑定；</p>
 <p>模块：一组内聚的函数、数据集合；仅对一类行为主体负责。</p>
 <p><strong>要求：</strong></p>
@@ -634,9 +1153,108 @@
 <li>数据与函数分离；负面影响：导致实例化类数量增加；</li>
 <li>外观模式：使用一个类负责实例化所有相关对象；</li>
 </ol>
-<h2 id="OCP开闭原则"><a href="#OCP开闭原则" class="headerlink" title="OCP开闭原则"></a>OCP开闭原则</h2><h2 id="LSP里氏替换原则"><a href="#LSP里氏替换原则" class="headerlink" title="LSP里氏替换原则"></a>LSP里氏替换原则</h2><h2 id="ISP接口隔离原则"><a href="#ISP接口隔离原则" class="headerlink" title="ISP接口隔离原则"></a>ISP接口隔离原则</h2><h2 id="DIP依赖倒置原则"><a href="#DIP依赖倒置原则" class="headerlink" title="DIP依赖倒置原则"></a>DIP依赖倒置原则</h2><h1 id="组件原则"><a href="#组件原则" class="headerlink" title="组件原则"></a>组件原则</h1><p>组件：最小部署单元，二进制文件，比如dll</p>
-<p>要求：保留独立部署、独立开发的能力</p>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1>
+<h1 id="2、开闭原则（OCP）"><a href="#2、开闭原则（OCP）" class="headerlink" title="2、开闭原则（OCP）"></a>2、开闭原则（OCP）</h1><p>对象对扩展开放，对修改关闭，即扩展无需修改现有代码；</p>
+<p>更改封闭拓展开放：通过子类继承父类,重写父类虚函数。<br>对类的改动是通过增加代码进行的，而不是修改现有的代码。<br>也就是说软件开发人员一旦写出了可以运行的代码，就不应该去改动它，而是要保证它能一直运行下去。这需要借助于抽象和多态，即把可能变化的内容抽象出来，从而使抽象的部分是相对稳定的，而具体的实现则是可以改变的和扩展的。</p>
+<h1 id="3、里氏替换原则（LSP）"><a href="#3、里氏替换原则（LSP）" class="headerlink" title="3、里氏替换原则（LSP）"></a>3、里氏替换原则（LSP）</h1><p>在任何父类出现的地方都可以用它的子类来替代，程序的行为不变。</p>
+<p>即：同一个继承体系中的对象，应该有共同的行为特征。</p>
+<h2 id="反例"><a href="#反例" class="headerlink" title="反例"></a>反例</h2><p>正方形不是矩形的子类；</p>
+<h1 id="4、接口隔离原则（ISP）"><a href="#4、接口隔离原则（ISP）" class="headerlink" title="4、接口隔离原则（ISP）"></a>4、接口隔离原则（ISP）</h1><p>不应该强迫程序依赖他们不需要的方法，即 一个接口不需要提供太多的行为，一个接口应该只提供一种对外的功能，不应该把所有的操作都封装到一个接口中。</p>
+<h1 id="5、依赖倒置原则（依赖注入原则）（DIP）"><a href="#5、依赖倒置原则（依赖注入原则）（DIP）" class="headerlink" title="5、依赖倒置原则（依赖注入原则）（DIP）"></a>5、依赖倒置原则（依赖注入原则）（DIP）</h1><p>要依赖于抽象，不要依赖于具体的实现。（接口比实现稳定）</p>
+<p>即在应用程序中，所有的类如果使用或依赖于其他的类，则应该依赖于这些类的抽象类，而不是类的具体类。</p>
+<p>为了实现这一原则，就要求我们在编程的时候针对抽象类或者接口编程，而不是针对具体的实现编程。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/gRPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FuZirui">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+      <meta itemprop="description" content="这是一个基于 Hexo 的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 我的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/gRPC/" class="post-title-link" itemprop="url">gRpc</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-17 12:30:00" itemprop="dateCreated datePublished" datetime="2025-08-17T12:30:00+08:00">2025-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>0</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
       
     </div>
 
@@ -674,13 +1292,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">5k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动

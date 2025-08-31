@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.fuzirui.cn","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.24.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 限制程序的直接转移，goto的使用   面向对象编程 函数式编程 隔离可变性： 可变组件：事务性内存保护变量 不可变组件：函数实现">
+    <meta name="description" content="软件架构师的基本素养在不改变接口的情况下实现添加功能； 组件设计折中选择复用性与可维护性；Nc 1、单一职责原则（SRP）每个函数只做一件事情； 每个模块仅对一类行为主体负责类，对外只能提供一种功能，而引起类变化的原因应该只有一个。 主体：actor，一类人，有着相同的系统变更需求； 内聚：将对某类行为主体负责的代码绑定； 模块：一组内聚的函数、数据集合；仅对一类行为主体负责。 要求：  分离不同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="整洁架构之道">
-<meta property="og:url" content="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/CleanArchitecture/index.html">
+<meta property="og:title" content="设计原则SOLID">
+<meta property="og:url" content="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="价值维度 行为价值 架构价值  编程范式 结构化编程 限制程序的直接转移，goto的使用   面向对象编程 函数式编程 隔离可变性： 可变组件：事务性内存保护变量 不可变组件：函数实现">
+<meta property="og:description" content="软件架构师的基本素养在不改变接口的情况下实现添加功能； 组件设计折中选择复用性与可维护性；Nc 1、单一职责原则（SRP）每个函数只做一件事情； 每个模块仅对一类行为主体负责类，对外只能提供一种功能，而引起类变化的原因应该只有一个。 主体：actor，一类人，有着相同的系统变更需求； 内聚：将对某类行为主体负责的代码绑定； 模块：一组内聚的函数、数据集合；仅对一类行为主体负责。 要求：  分离不同">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-17T04:30:00.000Z">
 <meta property="article:modified_time" content="2025-08-17T04:30:00.000Z">
@@ -33,13 +33,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/CleanArchitecture/">
+<link rel="canonical" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/CleanArchitecture/","path":"2025/08/17/技术/架构设计/CleanArchitecture/","title":"整洁架构之道"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/","path":"2025/08/17/技术/架构设计/设计原则/","title":"设计原则SOLID"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>整洁架构之道 | 我的博客</title>
+<title>设计原则SOLID | 我的博客</title>
   
 
 
@@ -123,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%B7%E5%80%BC%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">价值维度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">编程范式</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%B4%A0%E5%85%BB"><span class="nav-number">1.</span> <span class="nav-text">软件架构师的基本素养</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99%EF%BC%88SRP%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">1、单一职责原则（SRP）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99%EF%BC%88OCP%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">2、开闭原则（OCP）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%EF%BC%88LSP%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">3、里氏替换原则（LSP）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E4%BE%8B"><span class="nav-number">4.1.</span> <span class="nav-text">反例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99%EF%BC%88ISP%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">4、接口隔离原则（ISP）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99%EF%BC%88%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E5%8E%9F%E5%88%99%EF%BC%89%EF%BC%88DIP%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">5、依赖倒置原则（依赖注入原则）（DIP）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -172,7 +172,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/CleanArchitecture/">
+    <link itemprop="mainEntityOfPage" href="https://www.fuzirui.cn/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -185,12 +185,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="整洁架构之道 | 我的博客">
+      <meta itemprop="name" content="设计原则SOLID | 我的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          整洁架构之道
+          设计原则SOLID
         </h1>
 
         <div class="post-meta-container">
@@ -220,7 +220,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>79</span>
+      <span>810</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -237,25 +237,38 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="价值维度"><a href="#价值维度" class="headerlink" title="价值维度"></a>价值维度</h1><ol>
-<li>行为价值</li>
-<li>架构价值</li>
+    <div class="post-body" itemprop="articleBody"><h1 id="软件架构师的基本素养"><a href="#软件架构师的基本素养" class="headerlink" title="软件架构师的基本素养"></a>软件架构师的基本素养</h1><p>在不改变接口的情况下实现添加功能；</p>
+<p>组件设计折中选择复用性与可维护性；Nc</p>
+<h1 id="1、单一职责原则（SRP）"><a href="#1、单一职责原则（SRP）" class="headerlink" title="1、单一职责原则（SRP）"></a>1、单一职责原则（SRP）</h1><p>每个函数只做一件事情；</p>
+<p>每个模块仅对一类行为主体负责类，对外只能提供一种功能，而引起类变化的原因应该只有一个。</p>
+<p>主体：actor，一类人，有着相同的系统变更需求；</p>
+<p>内聚：将对某类行为主体负责的代码绑定；</p>
+<p>模块：一组内聚的函数、数据集合；仅对一类行为主体负责。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li>分离不同主体依赖的代码；</li>
 </ol>
-<h1 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h1><ol>
-<li>结构化编程<ol>
-<li>限制程序的直接转移，goto的使用</li>
+<p><strong>反例：</strong></p>
+<ol>
+<li>一个类中的是三个接口，被三个不同的主体调用；<ol>
+<li>负面影响：一个主体需求的变化，影响到另一个主体；（比如共用了底层接口）</li>
 </ol>
 </li>
-<li>面向对象编程</li>
-<li>函数式编程<ol>
-<li>隔离可变性：<ol>
-<li>可变组件：事务性内存保护变量</li>
-<li>不可变组件：函数实现</li>
 </ol>
-</li>
+<p><strong>常用措施：</strong></p>
+<ol>
+<li>数据与函数分离；负面影响：导致实例化类数量增加；</li>
+<li>外观模式：使用一个类负责实例化所有相关对象；</li>
 </ol>
-</li>
-</ol>
+<h1 id="2、开闭原则（OCP）"><a href="#2、开闭原则（OCP）" class="headerlink" title="2、开闭原则（OCP）"></a>2、开闭原则（OCP）</h1><p>对象对扩展开放，对修改关闭，即扩展无需修改现有代码；</p>
+<p>更改封闭拓展开放：通过子类继承父类,重写父类虚函数。<br>对类的改动是通过增加代码进行的，而不是修改现有的代码。<br>也就是说软件开发人员一旦写出了可以运行的代码，就不应该去改动它，而是要保证它能一直运行下去。这需要借助于抽象和多态，即把可能变化的内容抽象出来，从而使抽象的部分是相对稳定的，而具体的实现则是可以改变的和扩展的。</p>
+<h1 id="3、里氏替换原则（LSP）"><a href="#3、里氏替换原则（LSP）" class="headerlink" title="3、里氏替换原则（LSP）"></a>3、里氏替换原则（LSP）</h1><p>在任何父类出现的地方都可以用它的子类来替代，程序的行为不变。</p>
+<p>即：同一个继承体系中的对象，应该有共同的行为特征。</p>
+<h2 id="反例"><a href="#反例" class="headerlink" title="反例"></a>反例</h2><p>正方形不是矩形的子类；</p>
+<h1 id="4、接口隔离原则（ISP）"><a href="#4、接口隔离原则（ISP）" class="headerlink" title="4、接口隔离原则（ISP）"></a>4、接口隔离原则（ISP）</h1><p>不应该强迫程序依赖他们不需要的方法，即 一个接口不需要提供太多的行为，一个接口应该只提供一种对外的功能，不应该把所有的操作都封装到一个接口中。</p>
+<h1 id="5、依赖倒置原则（依赖注入原则）（DIP）"><a href="#5、依赖倒置原则（依赖注入原则）（DIP）" class="headerlink" title="5、依赖倒置原则（依赖注入原则）（DIP）"></a>5、依赖倒置原则（依赖注入原则）（DIP）</h1><p>要依赖于抽象，不要依赖于具体的实现。（接口比实现稳定）</p>
+<p>即在应用程序中，所有的类如果使用或依赖于其他的类，则应该依赖于这些类的抽象类，而不是类的具体类。</p>
+<p>为了实现这一原则，就要求我们在编程的时候针对抽象类或者接口编程，而不是针对具体的实现编程。</p>
 
     </div>
 
@@ -272,13 +285,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/Linux/%E5%86%85%E6%A0%B8%E8%AE%BE%E8%AE%A1/" rel="prev" title="Linux内核设计">
-                  <i class="fa fa-angle-left"></i> Linux内核设计
+                <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/gRPC/" rel="prev" title="gRpc">
+                  <i class="fa fa-angle-left"></i> gRpc
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/08/23/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/DomainDrivenDesign/" rel="next" title="领域驱动设计">
-                  领域驱动设计 <i class="fa fa-angle-right"></i>
+                <a href="/2025/08/17/%E6%8A%80%E6%9C%AF/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E7%BB%84%E4%BB%B6%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="next" title="组件的设计原则">
+                  组件的设计原则 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
